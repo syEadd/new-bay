@@ -1,0 +1,139 @@
+.box div {
+  width: 100px;
+  height: 100px;
+  border: 5px solid red;
+}
+
+.left-float div {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.border {
+  width: 200px;
+  height: 200px;
+  border: 1px solid blue;
+}
+
+.inline {
+  /* block, inline-block, inline 
+    세 가지 차이점에 대해서 잘 정리 해두기!
+
+    1. blcok : 가로 100% 차지, width, height 지정 가능 (수직 정렬)
+    2. inline-block : inline처럼 본인이 가진 콘텐츠 크기 만큼만
+       가로 사이즈를 차지, width, height 지정 가능 (수평 정렬)
+    3. inline : 본인이 가진 콘텐츠 크기만큼만 가로 사이즈 차지,
+       width, height 지정 불가능 (수평 정렬)
+  */
+  display: inline-block;
+}
+
+.left-inline div {
+  display: inline-block;
+}
+
+.left-flex {
+  /* 기본값 : flex-start(왼쪽 정렬) */
+  display: flex;
+  /* justify-content: flex-start; */
+}
+
+.right-float div {
+  float: right;
+}
+
+.right-float div div {
+  float: left;
+}
+
+.right-inline {
+  text-align: right;
+}
+
+.right-inline div {
+  display: inline-block;
+  text-align: left;
+  /* text-align : 문단을 수평으로 정렬하는 속성 */
+  /* block요소 안에 있는 inline 요소를 정렬한다. */
+  /* text를 정렬할 때는 자기 자신에게 적용 가능 */
+  /* inline 요소라면 text뿐 아니라 이미지도 정렬 가능함! */
+}
+
+.right-flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.center_float {
+  /* 1. 자식 div들의 가로값을 다 더한 값 => width */
+  width: 300px;
+  margin: 0 auto;
+}
+
+.center_float div {
+  /* width : 100px이 아니라 양 옆에 border : 5px씩
+    더해져서 박스 하나의 width : 110px
+  */
+  float: left;
+  /* 내가 지정한 박스 사이즈에 border까지 포함시킨 값 */
+  box-sizing: border-box;
+}
+
+.center-inline {
+  text-align: center;
+}
+
+.center-inline div {
+  display: inline-block;
+  text-align: left;
+}
+
+.center-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+  /* 기본값이 flex-start */
+  /* 가로축 정렬하는 속성 */
+  justify-content: center;
+  /* 세로축 정렬하는 속성 */
+  align-items : start;
+
+  /* 박스가 떨어지는 방향 기본값 : row  */
+  /* 
+    flex-direction : row일 경우 
+    : 가로축이 주축 
+    수평정렬 - justify-content (주축)
+    수직정렬 - align-items
+  */
+  /* 
+    flex-direction : column일 경우
+    : 세로축이 주축
+    수평정렬 - align-items
+    수직정렬 - justify-content (주축)
+  */
+  flex-direction: column;
+  height: 700px;
+  border: 2px solid #000;
+}
+
+.flex div {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* order
+   부모의 display가 flex인 자식 요소들에게
+   order라는 속성으로 화면에 보이는 순서를 바꿀 수 있다.
+   * 기본값은 0이고, 숫자가 작은 순서대로 화면에 출력
+     order값이 같을 경우에는 작성된 순서대로 출력
+ */
+
+.third {
+  order: -1;
+}
